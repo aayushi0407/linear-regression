@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Prediction</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; }
+        .box { width: 400px; margin: 50px auto; padding: 20px; background: white; }
+        input, button { width: 100%; padding: 8px; margin: 5px 0; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Car Price Prediction</h2>
+
+    <form method="POST">
+        <input name="present_price" placeholder="Present Price" required>
+        <input name="kms_driven" placeholder="Kms Driven" required>
+
+        <input name="fuel_type" placeholder="Fuel Type (0/1/2)" required>
+        <input name="seller_type" placeholder="Seller Type (0/1)" required>
+        <input name="transmission" placeholder="Transmission (0/1)" required>
+
+        <input name="owner" placeholder="Owner (0/1/2)" required>
+        <input name="age" placeholder="Age of Car" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted Price: ₹ {{ prediction | round(2) }} Lakhs</h3>
+    {% endif %}
+</div>
+
+</body>
+</html>
